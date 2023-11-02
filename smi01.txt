@@ -1,0 +1,240 @@
+$ nvidia-smi -q -d ECC
+
+
+
+==============NVSMI LOG==============
+
+
+
+Timestamp                                 : Wed Nov  1 19:16:37 2023
+
+Driver Version                            : 525.125.06
+
+CUDA Version                              : 12.0
+
+
+
+Attached GPUs                             : 8
+
+GPU 00000000:00:05.0
+
+    Ecc Mode
+
+        Current                           : Enabled
+
+        Pending                           : Disabled
+
+    ECC Errors
+
+        Volatile
+
+            SRAM Correctable              : 0
+
+            SRAM Uncorrectable            : 0
+
+            DRAM Correctable              : 0
+
+            DRAM Uncorrectable            : 0
+
+        Aggregate
+
+            SRAM Correctable              : 0
+
+            SRAM Uncorrectable            : 0
+
+            DRAM Correctable              : 0
+
+            DRAM Uncorrectable            : 0
+
+
+
+GPU 00000000:00:06.0
+
+    Ecc Mode
+
+        Current                           : Enabled
+
+        Pending                           : Disabled
+
+    ECC Errors
+
+        Volatile
+
+            SRAM Correctable              : 0
+
+            SRAM Uncorrectable            : 0
+
+            DRAM Correctable              : 0
+
+            DRAM Uncorrectable            : 0
+
+        Aggregate
+
+            SRAM Correctable              : 0
+
+            SRAM Uncorrectable            : 0
+
+            DRAM Correctable              : 0
+
+            DRAM Uncorrectable            : 0
+
+
+
+GPU 00000000:00:07.0
+
+    Ecc Mode
+
+        Current                           : Enabled
+
+        Pending                           : Disabled
+
+    ECC Errors
+
+        Volatile
+
+            SRAM Correctable              : 0
+
+            SRAM Uncorrectable            : 0
+
+            DRAM Correctable              : 0
+
+            DRAM Uncorrectable            : 0
+
+        Aggregate
+
+            SRAM Correctable              : 0
+
+            SRAM Uncorrectable            : 0
+
+            DRAM Correctable              : 0
+
+            DRAM Uncorrectable            : 0
+
+
+
+GPU 00000000:00:08.0
+
+    Ecc Mode
+
+        Current                           : Enabled
+
+        Pending                           : Disabled
+
+    ECC Errors
+
+        Volatile
+
+            SRAM Correctable              : 0
+
+            SRAM Uncorrectable            : 0
+
+            DRAM Correctable              : 0
+
+            DRAM Uncorrectable            : 0
+
+        Aggregate
+
+            SRAM Correctable              : 0
+
+            SRAM Uncorrectable            : 0
+
+            DRAM Correctable              : 0
+
+            DRAM Uncorrectable            : 0
+
+
+
+GPU 00000000:00:09.0
+
+    Ecc Mode
+
+        Current                           : Enabled
+
+        Pending                           : Disabled
+
+    ECC Errors
+
+        Volatile
+
+            SRAM Correctable              : 0
+
+            SRAM Uncorrectable            : 0
+
+            DRAM Correctable              : 0
+
+            DRAM Uncorrectable            : 0
+
+        Aggregate
+
+            SRAM Correctable              : 0
+
+            SRAM Uncorrectable            : 0
+
+            DRAM Correctable              : 0
+
+            DRAM Uncorrectable            : 0
+
+
+
+GPU 00000000:00:0A.0
+
+    Ecc Mode
+
+        Current                           : Enabled
+
+        Pending                           : Disabled
+
+    ECC Errors
+
+        Volatile
+
+            SRAM Correctable              : 0
+
+            SRAM Uncorrectable            : 0
+
+            DRAM Correctable              : 0
+
+            DRAM Uncorrectable            : 0
+
+        Aggregate
+
+            SRAM Correctable              : 0
+
+            SRAM Uncorrectable            : 0
+
+            DRAM Correctable              : 0
+
+            DRAM Uncorrectable            : 0
+
+
+
+GPU 00000000:00:0B.0
+
+    Ecc Mode
+
+        Current                           : Enabled
+
+        Pending                           : Disabled
+
+    ECC Errors
+
+        Volatile
+
+            SRAM Correctable              : 0
+
+            SRAM Uncorrectable            : 0
+
+            DRAM Correctable              : 22
+
+            DRAM Uncorrectable            : 38
+
+        Aggregate
+
+            SRAM Correctable              : 0
+
+            SRAM Uncorrectable            : 0
+
+            DRAM Correctable              : 4993
+
+            DRAM Uncorrectable            : 11106
+
