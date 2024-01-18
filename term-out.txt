@@ -1,0 +1,31 @@
+root@ngt4oojty5:/datasets# 
+root@ngt4oojty5:/datasets# 
+root@ngt4oojty5:/datasets# ls do-bucket/
+MaskRCNN-10.onnx  inception-v2.onnx  testfile.py
+root@ngt4oojty5:/datasets# 
+root@ngt4oojty5:/datasets# 
+root@ngt4oojty5:/datasets# ls gradient-bucket/
+testfile.py
+root@ngt4oojty5:/datasets# 
+root@ngt4oojty5:/datasets# cd do-bucket/
+root@ngt4oojty5:/datasets/do-bucket# ls
+MaskRCNN-10.onnx  inception-v2.onnx  testfile.py
+root@ngt4oojty5:/datasets/do-bucket# 
+root@ngt4oojty5:/datasets/do-bucket# echo "hello" > a.txt
+bash: echo: write error: Transport endpoint is not connected
+root@ngt4oojty5:/datasets/do-bucket# 
+root@ngt4oojty5:/datasets/do-bucket# ls
+ls: cannot open directory '.': Transport endpoint is not connected
+root@ngt4oojty5:/datasets/do-bucket# cd ..
+bash: cd: ..: Transport endpoint is not connected
+root@ngt4oojty5:/datasets/do-bucket# cd ..
+bash: cd: ..: Transport endpoint is not connected
+root@ngt4oojty5:/datasets/do-bucket# cd /datasets/
+root@ngt4oojty5:/datasets# ls
+do-bucket  gradient-bucket
+root@ngt4oojty5:/datasets# cd gradient-bucket/
+root@ngt4oojty5:/datasets/gradient-bucket# ls
+testfile.py
+root@ngt4oojty5:/datasets/gradient-bucket# echo "hello" > a.txt
+bash: a.txt: Read-only file system
+root@ngt4oojty5:/datasets/gradient-bucket# 
