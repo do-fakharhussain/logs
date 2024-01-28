@@ -1,0 +1,106 @@
+(bin) paperspace@pssmpcl5jlbv:~/.local/bin/bin$ pip install -U gradient
+Collecting gradient
+  Downloading gradient-2.0.6-py2.py3-none-any.whl (147 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 147.6/147.6 kB 2.2 MB/s eta 0:00:00
+Collecting requests[security] (from gradient)
+  Downloading requests-2.31.0-py3-none-any.whl.metadata (4.6 kB)
+Collecting six (from gradient)
+  Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)
+Collecting click<9.0,>=8.0.1 (from gradient)
+  Downloading click-8.1.7-py3-none-any.whl.metadata (3.0 kB)
+Collecting terminaltables (from gradient)
+  Downloading terminaltables-3.1.10-py2.py3-none-any.whl (15 kB)
+Collecting click-didyoumean (from gradient)
+  Downloading click_didyoumean-0.3.0-py3-none-any.whl (2.7 kB)
+Collecting click-help-colors (from gradient)
+  Downloading click_help_colors-0.9.4-py3-none-any.whl.metadata (4.1 kB)
+Collecting click-completion (from gradient)
+  Downloading click-completion-0.5.2.tar.gz (10 kB)
+  Preparing metadata (setup.py) ... done
+Collecting colorama==0.4.3 (from gradient)
+  Downloading colorama-0.4.3-py2.py3-none-any.whl (15 kB)
+Collecting requests-toolbelt (from gradient)
+  Downloading requests_toolbelt-1.0.0-py2.py3-none-any.whl (54 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 54.5/54.5 kB 6.6 MB/s eta 0:00:00
+Collecting progressbar2 (from gradient)
+  Downloading progressbar2-4.3.2-py3-none-any.whl.metadata (16 kB)
+Collecting halo (from gradient)
+  Downloading halo-0.0.31.tar.gz (11 kB)
+  Preparing metadata (setup.py) ... done
+Collecting marshmallow<3.0 (from gradient)
+  Downloading marshmallow-2.21.0-py2.py3-none-any.whl (50 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 50.2/50.2 kB 4.1 MB/s eta 0:00:00
+Collecting attrs<=19 (from gradient)
+  Downloading attrs-18.2.0-py2.py3-none-any.whl (34 kB)
+Collecting PyYAML==5.* (from gradient)
+  Downloading PyYAML-5.4.1.tar.gz (175 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 175.1/175.1 kB 15.8 MB/s eta 0:00:00
+  Installing build dependencies ... done
+  Getting requirements to build wheel ... error
+  error: subprocess-exited-with-error
+
+  × Getting requirements to build wheel did not run successfully.
+  │ exit code: 1
+  ╰─> [48 lines of output]
+      running egg_info
+      writing lib3/PyYAML.egg-info/PKG-INFO
+      writing dependency_links to lib3/PyYAML.egg-info/dependency_links.txt
+      writing top-level names to lib3/PyYAML.egg-info/top_level.txt
+      Traceback (most recent call last):
+        File "/home/paperspace/.local/bin/lib/python3.10/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 353, in <module>
+          main()
+        File "/home/paperspace/.local/bin/lib/python3.10/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 335, in main
+          json_out['return_val'] = hook(**hook_input['kwargs'])
+        File "/home/paperspace/.local/bin/lib/python3.10/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 118, in get_requires_for_build_wheel
+          return hook(config_settings)
+        File "/tmp/pip-build-env-utubddou/overlay/lib/python3.10/site-packages/setuptools/build_meta.py", line 325, in get_requires_for_build_wheel
+          return self._get_build_requires(config_settings, requirements=['wheel'])
+        File "/tmp/pip-build-env-utubddou/overlay/lib/python3.10/site-packages/setuptools/build_meta.py", line 295, in _get_build_requires
+          self.run_setup()
+        File "/tmp/pip-build-env-utubddou/overlay/lib/python3.10/site-packages/setuptools/build_meta.py", line 311, in run_setup
+          exec(code, locals())
+        File "<string>", line 271, in <module>
+        File "/tmp/pip-build-env-utubddou/overlay/lib/python3.10/site-packages/setuptools/__init__.py", line 103, in setup
+          return distutils.core.setup(**attrs)
+        File "/tmp/pip-build-env-utubddou/overlay/lib/python3.10/site-packages/setuptools/_distutils/core.py", line 185, in setup
+          return run_commands(dist)
+        File "/tmp/pip-build-env-utubddou/overlay/lib/python3.10/site-packages/setuptools/_distutils/core.py", line 201, in run_commands
+          dist.run_commands()
+        File "/tmp/pip-build-env-utubddou/overlay/lib/python3.10/site-packages/setuptools/_distutils/dist.py", line 969, in run_commands
+          self.run_command(cmd)
+        File "/tmp/pip-build-env-utubddou/overlay/lib/python3.10/site-packages/setuptools/dist.py", line 963, in run_command
+          super().run_command(command)
+        File "/tmp/pip-build-env-utubddou/overlay/lib/python3.10/site-packages/setuptools/_distutils/dist.py", line 988, in run_command
+          cmd_obj.run()
+        File "/tmp/pip-build-env-utubddou/overlay/lib/python3.10/site-packages/setuptools/command/egg_info.py", line 321, in run
+          self.find_sources()
+        File "/tmp/pip-build-env-utubddou/overlay/lib/python3.10/site-packages/setuptools/command/egg_info.py", line 329, in find_sources
+          mm.run()
+        File "/tmp/pip-build-env-utubddou/overlay/lib/python3.10/site-packages/setuptools/command/egg_info.py", line 551, in run
+          self.add_defaults()
+        File "/tmp/pip-build-env-utubddou/overlay/lib/python3.10/site-packages/setuptools/command/egg_info.py", line 589, in add_defaults
+          sdist.add_defaults(self)
+        File "/tmp/pip-build-env-utubddou/overlay/lib/python3.10/site-packages/setuptools/command/sdist.py", line 112, in add_defaults
+          super().add_defaults()
+        File "/tmp/pip-build-env-utubddou/overlay/lib/python3.10/site-packages/setuptools/_distutils/command/sdist.py", line 251, in add_defaults
+          self._add_defaults_ext()
+        File "/tmp/pip-build-env-utubddou/overlay/lib/python3.10/site-packages/setuptools/_distutils/command/sdist.py", line 336, in _add_defaults_ext
+          self.filelist.extend(build_ext.get_source_files())
+        File "<string>", line 201, in get_source_files
+        File "/tmp/pip-build-env-utubddou/overlay/lib/python3.10/site-packages/setuptools/_distutils/cmd.py", line 107, in __getattr__
+          raise AttributeError(attr)
+      AttributeError: cython_sources
+      [end of output]
+
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+error: subprocess-exited-with-error
+
+× Getting requirements to build wheel did not run successfully.
+│ exit code: 1
+╰─> See above for output.
+
+note: This error originates from a subprocess, and is likely not a problem with pip.
+
+[notice] A new release of pip is available: 23.3.1 -> 23.3.2
+[notice] To update, run: pip install --upgrade pip
+(bin) paperspace@pssmpcl5jlbv:~/.local/bin/bin$
