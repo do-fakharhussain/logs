@@ -1,0 +1,121 @@
+paperspace@psva412rsm2y:~$ nvidia-smi
+Fri Mar  8 07:23:12 2024
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 535.129.03             Driver Version: 535.129.03   CUDA Version: 12.2     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  NVIDIA A100-SXM4-80GB          On  | 00000000:00:05.0 Off |                    0 |
+| N/A   44C    P0              57W / 500W |    160MiB / 81920MiB |      0%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+|   1  NVIDIA A100-SXM4-80GB          On  | 00000000:00:06.0 Off |                    0 |
+| N/A   44C    P0              58W / 500W |      2MiB / 81920MiB |      0%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+|   2  NVIDIA A100-SXM4-80GB          On  | 00000000:00:07.0 Off |                    0 |
+| N/A   41C    P0              53W / 500W |      2MiB / 81920MiB |      0%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+|   3  NVIDIA A100-SXM4-80GB          On  | 00000000:00:08.0 Off |                    0 |
+| N/A   42C    P0              55W / 500W |      2MiB / 81920MiB |      0%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|    0   N/A  N/A      2415      G   /usr/lib/xorg/Xorg                           70MiB |
+|    0   N/A  N/A      2549      G   /usr/bin/gnome-shell                         80MiB |
++---------------------------------------------------------------------------------------+
+paperspace@psva412rsm2y:~$ python -c 'import vllm; vllm.LLM(model="mistralai/Mixtral-8x7B-Instruct-v0.1", tensor_parallel_size=4)'
+INFO 03-08 07:23:17 config.py:433] Custom all-reduce kernels are temporarily disabled due to stability issues. We will re-enable them once the issues are resolved.
+2024-03-08 07:23:19,696 INFO worker.py:1724 -- Started a local Ray instance.
+INFO 03-08 07:23:21 llm_engine.py:87] Initializing an LLM engine with config: model='mistralai/Mixtral-8x7B-Instruct-v0.1', tokenizer='mistralai/Mixtral-8x7B-Instruct-v0.1', tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=32768, download_dir=None, load_format=auto, tensor_parallel_size=4, disable_custom_all_reduce=True, quantization=None, enforce_eager=False, kv_cache_dtype=auto, device_config=cuda, seed=0)
+psva412rsm2y:59475:59475 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to eth0
+psva412rsm2y:59475:59475 [0] NCCL INFO Bootstrap : Using eth0:10.59.142.4<0>
+psva412rsm2y:59475:59475 [0] NCCL INFO NET/Plugin : Plugin load (libnccl-net.so) returned 2 : libnccl-net.so: cannot open shared object file: No such file or directory
+psva412rsm2y:59475:59475 [0] NCCL INFO NET/Plugin : No plugin found, using internal implementation
+psva412rsm2y:59475:59475 [0] NCCL INFO cudaDriverVersion 12020
+NCCL version 2.18.1+cuda12.1
+psva412rsm2y:59475:59475 [0] NCCL INFO NCCL_IB_DISABLE set by environment to 0.
+psva412rsm2y:59475:59475 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to eth0
+psva412rsm2y:59475:59475 [0] NCCL INFO NCCL_IB_HCA set to mlx5
+psva412rsm2y:59475:59475 [0] NCCL INFO NET/IB : No device found.
+psva412rsm2y:59475:59475 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to eth0
+psva412rsm2y:59475:59475 [0] NCCL INFO NET/Socket : Using [0]eth0:10.59.142.4<0>
+psva412rsm2y:59475:59475 [0] NCCL INFO Using network Socket
+psva412rsm2y:59475:59475 [0] NCCL INFO NCCL_TOPO_FILE set by environment to /etc/nccl/topo.xml
+
+psva412rsm2y:59475:59475 [0] graph/paths.cc:324 NCCL WARN P2P is disabled between NVLINK connected GPUs 1 and 0. This should not be the case given their connectivity, and is probably due to a hardware issue. If you still want to proceed, you can set NCCL_IGNORE_DISABLED_P2P=1.
+psva412rsm2y:59475:59475 [0] NCCL INFO graph/paths.cc:550 -> 1
+psva412rsm2y:59475:59475 [0] NCCL INFO init.cc:795 -> 1
+psva412rsm2y:59475:59475 [0] NCCL INFO init.cc:1309 -> 1
+psva412rsm2y:59475:59475 [0] NCCL INFO init.cc:1549 -> 1
+psva412rsm2y:59475:59475 [0] NCCL INFO init.cc:1587 -> 1
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/paperspace/.local/lib/python3.11/site-packages/vllm/entrypoints/llm.py", line 109, in __init__
+    self.llm_engine = LLMEngine.from_engine_args(engine_args)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/paperspace/.local/lib/python3.11/site-packages/vllm/engine/llm_engine.py", line 391, in from_engine_args
+    engine = cls(*engine_configs,
+             ^^^^^^^^^^^^^^^^^^^^
+  File "/home/paperspace/.local/lib/python3.11/site-packages/vllm/engine/llm_engine.py", line 126, in __init__
+    self._init_workers_ray(placement_group)
+  File "/home/paperspace/.local/lib/python3.11/site-packages/vllm/engine/llm_engine.py", line 304, in _init_workers_ray
+    self._run_workers("init_model",
+  File "/home/paperspace/.local/lib/python3.11/site-packages/vllm/engine/llm_engine.py", line 1041, in _run_workers
+    driver_worker_output = getattr(self.driver_worker,
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/paperspace/.local/lib/python3.11/site-packages/vllm/worker/worker.py", line 94, in init_model
+    init_distributed_environment(self.parallel_config, self.rank,
+  File "/home/paperspace/.local/lib/python3.11/site-packages/vllm/worker/worker.py", line 275, in init_distributed_environment
+    cupy_utils.init_process_group(
+  File "/home/paperspace/.local/lib/python3.11/site-packages/vllm/model_executor/parallel_utils/cupy_utils.py", line 90, in init_process_group
+    _NCCL_BACKEND = NCCLBackendWithBFloat16(world_size, rank, host, port)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/paperspace/.local/lib/python3.11/site-packages/cupyx/distributed/_nccl_comm.py", line 70, in __init__
+    self._init_with_tcp_store(n_devices, rank, host, port)
+  File "/home/paperspace/.local/lib/python3.11/site-packages/cupyx/distributed/_nccl_comm.py", line 100, in _init_with_tcp_store
+    self._comm = nccl.NcclCommunicator(n_devices, nccl_id, rank)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "cupy_backends/cuda/libs/nccl.pyx", line 283, in cupy_backends.cuda.libs.nccl.NcclCommunicator.__init__
+  File "cupy_backends/cuda/libs/nccl.pyx", line 129, in cupy_backends.cuda.libs.nccl.check_status
+cupy_backends.cuda.libs.nccl.NcclError: NCCL_ERROR_UNHANDLED_CUDA_ERROR: unhandled cuda error (run with NCCL_DEBUG=INFO for details)
+^CException ignored in atexit callback: <function _exit_function at 0x7f7eb6ffbec0>
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/multiprocessing/util.py", line 360, in _exit_function
+Process ExceptionAwareProcess-1:
+    p.join()
+  File "/home/paperspace/.local/lib/python3.11/site-packages/cupyx/distributed/_store.py", line 38, in join
+    super().join()
+  File "/usr/lib/python3.11/multiprocessing/process.py", line 149, in join
+    res = self._popen.wait(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/multiprocessing/popen_fork.py", line 43, in wait
+    return self.poll(os.WNOHANG if timeout == 0.0 else 0)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/multiprocessing/popen_fork.py", line 27, in poll
+Traceback (most recent call last):
+    pid, sts = os.waitpid(self.pid, flag)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt:
+  File "/usr/lib/python3.11/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/home/paperspace/.local/lib/python3.11/site-packages/cupyx/distributed/_store.py", line 32, in run
+    super().run()
+  File "/usr/lib/python3.11/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/paperspace/.local/lib/python3.11/site-packages/cupyx/distributed/_store.py", line 87, in _server_loop
+    c_socket, addr = s.accept()
+                     ^^^^^^^^^^
+  File "/usr/lib/python3.11/socket.py", line 294, in accept
+    fd, addr = self._accept()
+               ^^^^^^^^^^^^^^
+KeyboardInterrupt
+paperspace@psva412rsm2y:~$
